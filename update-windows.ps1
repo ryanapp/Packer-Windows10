@@ -7,6 +7,7 @@ Install-PackageProvider -Name NuGet -Force
 Install-Module PSWindowsUpdate -Force
 Import-Module PSWindowsUpdate
 
+Add-WUServiceManager -MicrosoftUpdate -Confirm:$false -Silent
 Install-WindowsUpdate -AcceptAll -RecurseCycle 5 -AutoReboot -Verbose 
 
 Stop-Transcript
