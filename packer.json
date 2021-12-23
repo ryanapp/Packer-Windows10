@@ -8,6 +8,8 @@
         "update-windows.ps1",
         "configure-winrm.ps1"
       ],
+      "cd_files": [ "./virtio-drivers/**"],
+      "cd_label": "virtio",
       "guest_additions_mode": "upload",
       "guest_additions_path": "c:/Windows/Temp/windows.iso",
       "guest_os_type": "Windows10_64",
