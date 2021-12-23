@@ -8,134 +8,10 @@
         "update-windows.ps1",
         "configure-winrm.ps1"
       ],
-      "generation": "1",
-      "headless": true,
-      "iso_checksum": "md5:{{user `iso_md5`}}",
-      "iso_url": "{{user `iso_path`}}",
-      "shutdown_command": "shutdown /s /t 5 /f /d p:4:1 /c \"Packer Shutdown\"",
-      "skip_compaction": false,
-      "switch_name": "{{user `switch_name`}}",
-      "type": "hyperv-iso",
-      "winrm_password": "vagrant",
-      "winrm_timeout": "6h",
-      "winrm_username": "vagrant"
-    },
-    {
-      "communicator": "winrm",
-      "disk_size": 61440,
-      "floppy_files": [
-        "Autounattend.xml",
-        "update-windows.ps1",
-        "configure-winrm.ps1"
-      ],
-      "guest_os_type": "win-10",
-      "iso_checksum": "md5:{{user `iso_md5`}}",
-      "iso_url": "{{user `iso_path`}}",
-      "parallels_tools_flavor": "win",
-      "parallels_tools_guest_path": "c:/Windows/Temp/windows.iso",
-      "parallels_tools_mode": "upload",
-      "prlctl": [
-        [
-          "set",
-          "{{.Name}}",
-          "--startup-view",
-          "window"
-        ],
-        [
-          "set",
-          "{{.Name}}",
-          "--memsize",
-          "2048"
-        ],
-        [
-          "set",
-          "{{.Name}}",
-          "--cpus",
-          "2"
-        ],
-        [
-          "set",
-          "{{.Name}}",
-          "--smart-mount",
-          "off"
-        ],
-        [
-          "set",
-          "{{.Name}}",
-          "--efi-boot",
-          "off"
-        ],
-        [
-          "set",
-          "{{.Name}}",
-          "--shared-profile",
-          "off"
-        ],
-        [
-          "set",
-          "{{.Name}}",
-          "--shared-cloud",
-          "off"
-        ],
-        [
-          "set",
-          "{{.Name}}",
-          "--sh-app-guest-to-host",
-          "off"
-        ],
-        [
-          "set",
-          "{{.Name}}",
-          "--sh-app-host-to-guest",
-          "off"
-        ]
-      ],
-      "shutdown_command": "shutdown /s /t 5 /f /d p:4:1 /c \"Packer Shutdown\"",
-      "skip_compaction": false,
-      "type": "parallels-iso",
-      "winrm_password": "vagrant",
-      "winrm_timeout": "6h",
-      "winrm_username": "vagrant"
-    },
-    {
-      "communicator": "winrm",
-      "disk_size": 61440,
-      "floppy_files": [
-        "Autounattend.xml",
-        "update-windows.ps1",
-        "configure-winrm.ps1"
-      ],
-      "guest_os_type": "windows9-64",
-      "headless": true,
-      "iso_checksum": "md5:{{user `iso_md5`}}",
-      "iso_url": "{{user `iso_path`}}",
-      "skip_compaction": false,
-      "tools_upload_flavor": "windows",
-      "tools_upload_path": "c:/Windows/Temp/windows.iso",
-      "type": "vmware-iso",
-      "vmx_data": {
-        "gui.fitguestusingnativedisplayresolution": "FALSE",
-        "memsize": "2048",
-        "numvcpus": "2",
-        "scsi0.virtualDev": "lsisas1068",
-        "virtualHW.version": "10"
-      },
-      "winrm_password": "vagrant",
-      "winrm_timeout": "6h",
-      "winrm_username": "vagrant"
-    },
-    {
-      "communicator": "winrm",
-      "disk_size": 61440,
-      "floppy_files": [
-        "Autounattend.xml",
-        "update-windows.ps1",
-        "configure-winrm.ps1"
-      ],
       "guest_additions_mode": "upload",
       "guest_additions_path": "c:/Windows/Temp/windows.iso",
       "guest_os_type": "Windows10_64",
-      "hard_drive_interface": "sata",
+      "hard_drive_interface": "virtio",
       "headless": true,
       "iso_checksum": "md5:{{user `iso_md5`}}",
       "iso_interface": "sata",
@@ -159,7 +35,7 @@
           "modifyvm",
           "{{.Name}}",
           "--vram",
-          "32"
+          "96"
         ]
       ],
       "winrm_insecure": true,
