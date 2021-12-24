@@ -17,7 +17,12 @@
                 <Disk wcm:action="add">
                     <CreatePartitions>
                         <CreatePartition wcm:action="add">
+                            <Type>Primary</Type>
                             <Order>1</Order>
+                            <Size>60</Size>
+                        </CreatePartition>
+                        <CreatePartition wcm:action="add">
+                            <Order>2</Order>
                             <Type>Primary</Type>
                             <Extend>true</Extend>
                         </CreatePartition>
@@ -25,11 +30,17 @@
                     <ModifyPartitions>
                         <ModifyPartition wcm:action="add">
                             <Active>true</Active>
-                            <Extend>false</Extend>
                             <Format>NTFS</Format>
-                            <Letter>C</Letter>
+                            <Label>boot</Label>
                             <Order>1</Order>
                             <PartitionID>1</PartitionID>
+                        </ModifyPartition>
+                        <ModifyPartition wcm:action="add">
+                            <Format>NTFS</Format>
+                            <Label>Windows 10</Label>
+                            <Letter>C</Letter>
+                            <Order>2</Order>
+                            <PartitionID>2</PartitionID>
                         </ModifyPartition>
                     </ModifyPartitions>
                     <DiskID>0</DiskID>
