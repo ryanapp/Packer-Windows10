@@ -1,25 +1,27 @@
 {
   "builders": [
     {
+	  "boot_command": "aaa",
+	  "boot_wait": "2s",
       "communicator": "winrm",
       "disk_size": 61440,
-      "floppy_files": [
+      "cd_files": [
         "Autounattend.xml",
         "update-windows.ps1",
         "configure-winrm.ps1"
       ],
-      "cd_files": [ "./virtio-drivers/**"],
-      "cd_label": "virtio",
       "guest_additions_mode": "upload",
       "guest_additions_path": "c:/Windows/Temp/windows.iso",
       "guest_os_type": "Windows10_64",
-      "hard_drive_interface": "virtio",
+      "hard_drive_interface": "sata",
       "headless": true,
+      "vrdp_bind_address": "0.0.0.0",
       "iso_checksum": "md5:{{user `iso_md5`}}",
       "iso_interface": "sata",
       "iso_url": "{{user `iso_path`}}",
       "shutdown_command": "shutdown /s /t 0 /f /d p:4:1 /c \"Packer Shutdown\"",
       "type": "virtualbox-iso",
+      "firmware": "efi",
       "vboxmanage": [
         [
           "modifyvm",
