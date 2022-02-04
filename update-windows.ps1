@@ -8,8 +8,8 @@ Install-Module PSWindowsUpdate -Force
 Import-Module PSWindowsUpdate
 
 Add-WUServiceManager -MicrosoftUpdate -Confirm:$false -Silent
-#Install-WindowsUpdate -AcceptAll -RecurseCycle 5 -AutoReboot -Verbose 
+Install-WindowsUpdate -AcceptAll -AutoReboot -Verbose 
 
 Stop-Transcript
 
-Invoke-Expression "a:\configure-winrm.ps1"
+Invoke-Expression "d:\configure-winrm.ps1"

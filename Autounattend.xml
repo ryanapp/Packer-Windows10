@@ -82,7 +82,7 @@
         <OSImage>
           <InstallTo>
             <DiskID>0</DiskID>
-            <PartitionID>1</PartitionID>
+            <PartitionID>4</PartitionID>
           </InstallTo>
           <WillShowUI>OnError</WillShowUI>
           <InstallToAvailablePartition>false</InstallToAvailablePartition>
@@ -124,7 +124,7 @@
       </AutoLogon>
       <FirstLogonCommands>
         <SynchronousCommand wcm:action="add">
-          <CommandLine>powershell -NoLogo -ExecutionPolicy RemoteSigned -File a:\update-windows.ps1</CommandLine>
+          <CommandLine>powershell -NoLogo -ExecutionPolicy RemoteSigned -File d:\update-windows.ps1</CommandLine>
           <Description>Update Windows, and when finished, run configure-winrm.ps1 to turn WinRM on so this par</Description>
           <Order>1</Order>
           <RequiresUserInput>false</RequiresUserInput>

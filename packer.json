@@ -40,6 +40,12 @@
           "{{.Name}}",
           "--vram",
           "96"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--graphicscontroller",
+          "VBoxSVGA"
         ]
       ],
       "winrm_insecure": true,
